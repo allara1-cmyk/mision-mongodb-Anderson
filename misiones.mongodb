@@ -66,5 +66,36 @@ db.criaturas.find({
 db.criaturas.find({ 
     nivel_peligro: { $gt: 8 } 
 });
+// Actualizar 
+db.criaturas.updateOne(
+    { 
+        nombre: "Dragon de Fuego" 
+    }, // condición para buscar
+    { 
+        $push: { 
+            habilidades: "lluvia de fuego" 
+        } 
+    } // agrega un nuevo valor al array
+);
+// Comprobacion
+db.criaturas.find({ 
+    nombre: "Dragon de Fuego" 
+}); 
+
+db.criaturas.updateMany(
+    { 
+        habitat: "Bosque Encantado" 
+    }, // filtro
+    { 
+    $inc: { 
+        nivel_peligro: 1 
+        } 
+    }   // incrementa en 1 el valor actual
+);
+
+// Comprobacion
+db.criaturas.find({ 
+    habitat: "Bosque Encantado" 
+});
 
 
