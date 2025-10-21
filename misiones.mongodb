@@ -1,0 +1,10 @@
+// --------------------------------------------------------
+// UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+// Nombre: LARA ANDERSON
+// Asignatura: Modelado avanzado de base de datos
+// MEl Cronista de Datos NoSQL
+// --------------------------------------------------------
+//Crear una base de datos NoSQL llamada bestiario
+use("bestiario");
+//Colección criaturas que contenga documentos variados
+db.createCollection("criaturas");
