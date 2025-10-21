@@ -8,3 +8,54 @@
 use("bestiario");
 //Colección criaturas que contenga documentos variados
 db.createCollection("criaturas");
+// Insertar una criatura individual (insertOne)
+db.criaturas.insertOne({
+  nombre: "Dragon de Fuego",
+  habitat: "Montañas Volcanicas",
+  nivel_peligro: 10,
+  dieta: ["rocas", "caballeros"],
+  habilidades: ["vuelo", "aliento de fuego", "garras afiladas"],
+  descubierto_por: "Eldrin el Valiente"
+});
+// Insertar varias criaturas con estructuras variadas (insertMany)
+db.criaturas.insertMany([
+  {
+    nombre: "Sirena del Norte",
+    habitat: "Aguas heladas del Mar Espectral",
+    nivel_peligro: 6,
+    habilidades: ["canto hipnotico", "resistencia al frio"],
+    dieta: ["peces", "marineros distraidos"],
+    apariencia: { color_cola: "azul cristalino", cabello: "plateado" },
+    descubierto_por: "Capitan Ronnar"
+  },
+  {
+    nombre: "Golem de Piedra",
+    habitat: "Ruinas antiguas del Desierto del Eco",
+    nivel_peligro: 8,
+    dieta: "ninguna",
+    habilidades: ["fuerza colosal", "resistencia fisica"],
+    estadisticas: { ataque: 90, defensa: 120 },
+    descubierto_por: "Arqueologa Lysa Varn"
+  },
+  {
+    nombre: "Quimera Sombría",
+    habitat: "Bosque Encantado",
+    nivel_peligro: 9,
+    habilidades: ["camuflaje", "rugido paralizante", "visión nocturna"],
+    partes: ["cabeza de leon", "cuerpo de serpiente", "alas de cuervo"],
+    dieta: ["animales magicos", "viajeros perdidos"],
+    descubierto_por: "Magus Dareth"
+  },
+  {
+    nombre: "Fenix Carmesi",
+    habitat: "Cimas de los Volcanes Eternos",
+    nivel_peligro: 7,
+    habilidades: ["renacimiento", "vuelo", "control de fuego"],
+    color_plumas: "rojo intenso",
+    esperanza_vida: "infinita",
+    descubierto_por: "Cronista Aranel"
+  }
+]);
+
+
+
