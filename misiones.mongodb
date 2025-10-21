@@ -56,6 +56,15 @@ db.criaturas.insertMany([
     descubierto_por: "Cronista Aranel"
   }
 ]);
-
+// Mostrar todas las criaturas
+db.criaturas.find()
+// Criaturas del Bosque Encantado
+db.criaturas.find({ 
+    habitat: "Bosque Encantado" 
+});
+// Mostrar criaturas con nivel_peligro > 8
+db.criaturas.find({ 
+    nivel_peligro: { $gt: 8 } 
+});
 
 
