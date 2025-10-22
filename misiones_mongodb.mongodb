@@ -5,7 +5,8 @@
 // MEl Cronista de Datos NoSQL
 // --------------------------------------------------------
 //Crear una base de datos NoSQL llamada bestiario
-use("bestiario2");
+use("bestiario");
+
 //Colección criaturas que contenga documentos variados
 db.createCollection("criaturas");
 // Insertar una criatura individual (insertOne)
@@ -98,13 +99,7 @@ db.criaturas.find({
     habitat: "Bosque Encantado" 
 });
 
-
-// Elimina un solo documento que coincida con el nombre.
-db.criaturas.deleteOne({
-  nombre: "Sirena del Norte"
-});
-
 // Eliminar todas las criaturas de un hábitat determinado
 db.criaturas.deleteMany({
-  habitat: "Ruinas antiguas del Desierto del Eco"
+  habitat: "Montañas Volcanicas"
 });
