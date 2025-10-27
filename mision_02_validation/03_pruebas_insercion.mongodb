@@ -27,6 +27,9 @@ db.guardianes.insertOne({
     { nombre_item: "Antorcha", cantidad: 2 }
   ]
 });
+// Error esperado: documento falla validación del campo rango
+
+
 //INSERCION DE CRIATURAS
 // Obtener el ID
 let id_guardian = db.guardianes.findOne({ nombre: "Escanor" })._id;
@@ -57,3 +60,4 @@ db.criaturas.insertOne({
   },
   id_guardian: id_guardian
 });
+// Error esperado: campo 'salud' faltante en ficha_veterinaria
