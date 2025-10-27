@@ -7,7 +7,7 @@ En una base de datos relacional, todas las filas de una tabla deben tener las mi
 En cambio, en **MongoDB** cada documento puede tener su propio conjunto de campos, arreglos y objetos anidados, ofreciendo una **flexibilidad natural** para modelar información semi-estructurada.
 
 Además, no es necesario modificar la estructura de la base cada vez que se agrega un nuevo tipo de criatura, facilitando la **evolución del modelo de datos** conforme crece el bestiario.
-![Figura 1. MongoDB vs PostgreSQL](./images/mongoVSpostgre.png)
+![Figura 1. MongoDB vs PostgreSQL](../images/mongoVSpostgre.png)
 ---
 
 ## 4.2. Tipos de NoSQL  
@@ -20,7 +20,7 @@ ArangoDB sería más útil que MongoDB en un *Bestiario Digital Extendido*, dond
 Por ejemplo, se podrían definir nodos para criaturas y aristas para representar relaciones como **“depredador de”**, **“sirviente de”** o **“descendiente de”**.  
 De esta forma, ArangoDB consultaría tanto los atributos de cada criatura (como un documento) como sus conexiones con otras (como un grafo), ofreciendo una **visión más completa y relacional** del ecosistema.
 
-![Figura 2. ArangoDB — base de datos documental, de grafo y clave-valor](./images/ArangoDB.png)
+![Figura 2. ArangoDB — base de datos documental, de grafo y clave-valor](../images/ArangoDB.png)
 ---
 
 ## 4.3. Casos de Estudio  
@@ -31,4 +31,4 @@ MongoDB fue elegido por su **escalabilidad horizontal**, su capacidad para almac
 
 En escenarios donde los datos cambian constantemente y no siguen un formato uniforme —como los millones de publicaciones y transacciones de eBay—, MongoDB permite mantener un **rendimiento estable sin alterar esquemas ni realizar migraciones complejas**.
 
-![Figura 3.  eBay — empresa que utiliza bases de datos NoSQL](./images/ebay.png)
+![Figura 3.  eBay — empresa que utiliza bases de datos NoSQL](../images/ebay.png)
