@@ -27,3 +27,33 @@ db.guardianes.insertOne({
     { nombre_item: "Antorcha", cantidad: 2 }
   ]
 });
+//INSERCION DE CRIATURAS
+// Obtener el ID
+let id_guardian = db.guardianes.findOne({ nombre: "Escanor" })._id;
+// Insertar datos de criatura valida
+// Criatura válida
+db.criaturas.insertOne({
+  nombre: "Dracorn",
+  habitat: "Montañas de Fuego",
+  nivel_peligro: 9,
+  es_legendaria: true,
+  habilidades: ["Vuelo", "Fuego", "Telepatía"],
+  ficha_veterinaria: {
+    salud: "Óptima",
+    ultima_revision: new Date("2025-10-10")
+  },
+  id_guardian: id_guardian
+});
+
+// Criatura inválida 
+db.criaturas.insertOne({
+  nombre: "Serpentis",
+  habitat: "Pantano Oscuro",
+  nivel_peligro: 5,
+  es_legendaria: false,
+  habilidades: [],
+  ficha_veterinaria: {
+    ultima_revision: new Date("2025-10-12")
+  },
+  id_guardian: id_guardian
+});
