@@ -1,0 +1,55 @@
+// Usar o crear la base de datos bestiario
+use("bestiario");
+// Eliminar la Coleccion Guardianes si ya existe
+db.guardianes.drop();
+// Creacion de la coleccion con la opcion validator: { $jsonSchema: { ... } }
+db.createCollection("guardianes" , {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            // Campo Requerido
+            required: ["nombre","rango","password_acceso","inventario"],
+            properties: {
+                nombre:{
+                    bsonType: "string"
+                },
+                rango: {
+                    // No es necesario agregar bsonType ya que puede tomar solo los valores del arreglo
+                    bsonType: "string",
+                    // Valores por defecto
+                    enum: ["Aprendiz","Maestro","Gran Maestro"]
+                },
+                password_acceso: {
+                    bsonType: "string",
+                    // Validacion de la expresion irregular
+                    pattern: "^(?=.*[A-Z])(?=.*[0-9]).{8,}$"
+                },
+                nivel: {
+                    bsonType: "int",
+                    // Valor Maximo y Minimo
+                    minimum: 1,
+                    maximum: 99
+                },
+                inventario:{
+                    bsonType: "array",
+                    // Minimo debe 1 item en el arreglo
+                    minItems: 1,
+                    items: {
+                        // SubDocumento
+                        bsonType: "object",
+                        required: ["nombre_item ","cantidad"],
+                        properties: {
+                            nombre_item: {
+                                bsonType: "string"
+                            },
+                            cantidad: {
+                                bsonType: "int",
+                                minimum: 1
+                            }
+                        }
+                    }
+                }          
+            }   
+        }
+    }   
+});
