@@ -28,8 +28,6 @@ db.guardianes.insertOne({
   ]
 });
 // Error esperado: documento falla validación del campo rango
-
-
 //INSERCION DE CRIATURAS
 // Obtener el ID
 let id_guardian = db.guardianes.findOne({ nombre: "Escanor" })._id;
