@@ -1,0 +1,29 @@
+use("bestiario");
+//INSERCION DE GUARDIANES
+// Documento que cumple con las validaciones
+db.guardianes.insertOne({
+    nombre: "Escanor",
+    rango: "Gran Maestro",
+    password_acceso: "ClaveFuerte1",
+    nivel: 45,
+    inventario: [
+        {
+            nombre_item: "Espada Sagrada",
+            cantidad: 1
+        },
+        {
+            nombre_item: "Pocion de Curacion",
+            cantidad: 1
+        }
+    ]
+});   
+// Documento que no cumple con las validaciones 
+db.guardianes.insertOne({
+  nombre: "Mira",
+  rango: "Novato",
+  password_acceso: "Debil123",
+  nivel: 10,
+  inventario: [
+    { nombre_item: "Antorcha", cantidad: 2 }
+  ]
+});

@@ -1,0 +1,58 @@
+// Usar Base de dato
+use("bestiario");
+// Eliminar coleccion en caso exista
+db.criaturas.drop();
+// Crear nueva coleccion
+db.createCollection("criaturas",{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            // Campos requeridos
+            required: ["nombre","habitat","nivel_peligro", "es_legendaria","habilidades","ficha_veterinaria","id_guardian"],
+            properties: {
+                nombre: {
+                    bsonType: "string"
+                },
+                habitat: {
+                    bsonType: "string"
+                },
+                nivel_peligro: {
+                    bsonType: "number",
+                    // valor min y max
+                    minimum:1,
+                    maximum:10
+                },
+                es_legendaria: {
+                    bsonType: "bool"
+                },
+                habilidades: {
+                    // arreglo con minimo un item
+                    bsonType: "array",
+                    minItems: 1,
+                    uniqueItems: true,
+                    items: {
+                        bsonType: "string"
+                    }
+                },
+                // Sub documento
+                ficha_veterinaria: {
+                    bsonType: "object",
+                    required: ["salud","ultima_revision"],
+                    properties: {
+                        salud: {
+                            bsonType: "string",
+                            enum: ["Óptima","Regular","Crítica"]
+                        },
+                        ultima_revision:{
+                            bsonType:"date"
+                        }
+                    }
+                },
+                // Relacion 1 a muchos
+                id_guardian: {
+                    bsonType: "objectId"
+                }
+            }
+        }
+    }    
+});
