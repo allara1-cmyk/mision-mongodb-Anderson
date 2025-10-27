@@ -78,20 +78,20 @@ Esta validación asegura la integridad de la información directamente en la bas
 
 ## Estructura del Proyecto
 
+<pre>
 mision_01_creacion/
-│   ├── ANALISIS_NOSQL.md
-│   └── misiones_mongodb.mongodb
+├── ANALISIS_NOSQL.md
+└── misiones_mongodb.mongodb
 
 mision_02_validation/
-│   ├── 01_definicion_guardianes.mongodb (Crea la colección 'guardianes' con validaciones y esquema JSON)
-│   ├── 02_definicion_criaturas.mongodb (Crea la colección 'criaturas' con validaciones y relaciones)
-│   ├── 03_pruebas_insercion.mongodb (Inserciones válidas e inválidas para probar la integridad del esquema)
-│   └── ANALISIS_VALIDACION.md
-│
-images/             (opcional para capturas o evidencias)
-README.md          (principal del repo, si deseas enlazar las misiones)
+├── 01_definicion_guardianes.mongodb (Crea la colección 'guardianes' con validaciones y esquema JSON)
+├── 02_definicion_criaturas.mongodb (Crea la colección 'criaturas' con validaciones y relaciones)
+├── 03_pruebas_insercion.mongodb (Inserciones válidas e inválidas para probar la integridad del esquema)
+└── ANALISIS_VALIDACION.md
 
-
+images/ (opcional para capturas o evidencias)
+README.md (principal del repo, si deseas enlazar las misiones)
+</pre>
 
 ---
 
@@ -114,16 +114,16 @@ Contiene pruebas de inserciones válidas e inválidas para verificar la protecci
 Se incluyen comentarios con los errores devueltos por MongoDB al fallar la validación.
 
 ![Figura 7. Inserción en Colección Guardián](./images/validaGuardian.png)  
-**Figura 7.** Inserción válida en la colección **guardianes**, donde se cumple con todas las reglas de validación definidas en el JSON Schema (campos requeridos, tipos correctos y estructura del inventario).
+Inserción válida en la colección **guardianes**, donde se cumple con todas las reglas de validación definidas en el JSON Schema (campos requeridos, tipos correctos y estructura del inventario).
 
 ![Figura 8. Inserción inválida en Colección Guardián](./images/invalidaGuardian.png)  
-**Figura 8.** Inserción inválida en la colección **guardianes**, donde el documento no supera las reglas de validación (por ejemplo, error en el patrón de contraseña o valor de rango incorrecto).
+Inserción inválida en la colección **guardianes**, donde el documento no supera las reglas de validación (por ejemplo, falla validación del campo rango).
 
 ![Figura 9. Inserción en Colección Criatura](./images/validacriaturas.png)  
-**Figura 9.** Inserción válida en la colección **criaturas**, demostrando la correcta aplicación de las relaciones embebidas (ficha_veterinaria) y referenciadas (id_guardian).
+Inserción válida en la colección **criaturas**, demostrando la correcta aplicación de las relaciones embebidas (ficha_veterinaria) y referenciadas (id_guardian).
 
 ![Figura 10. Inserción inválida en Colección Criatura](./images/invalidaCriaturas.png)  
-**Figura 10.** Inserción inválida en la colección **criaturas**, donde el documento no cumple con las reglas del JSON Schema (por ejemplo, falta el campo *salud* o el array *habilidades* está vacío).
+Inserción inválida en la colección **criaturas**, donde el documento no cumple con las reglas del JSON Schema (por ejemplo, falta el campo *salud* o el array *habilidades* está vacío).
 
 ### `ANALISIS_VALIDACION.md`
 Documento de análisis que explica:
