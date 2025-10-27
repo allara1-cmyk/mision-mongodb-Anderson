@@ -89,8 +89,8 @@ mision_02_validation/
 ├── 03_pruebas_insercion.mongodb (Inserciones válidas e inválidas para probar la integridad del esquema)
 └── ANALISIS_VALIDACION.md
 
-images/ (opcional para capturas o evidencias)
-README.md (principal del repo, si deseas enlazar las misiones)
+images/ (Capturas o evidencias)
+README.md (Documentacion)
 </pre>
 
 ---
